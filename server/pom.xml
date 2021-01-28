@@ -83,6 +83,11 @@
         </dependency>
         <dependency>
             <groupId>org.apereo.cas</groupId>
+            <artifactId>cas-server-core-audit</artifactId>
+            <version>${cas.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apereo.cas</groupId>
             <artifactId>cas-server-core-logout</artifactId>
             <version>${cas.version}</version>
         </dependency>
@@ -101,36 +106,48 @@
             <artifactId>cas-server-support-actions</artifactId>
             <version>${cas.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.apereo.cas</groupId>
+            <artifactId>cas-server-webapp-init</artifactId>
+            <version>${cas.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apereo.cas</groupId>
+            <artifactId>cas-server-webapp-init-tomcat</artifactId>
+            <version>${cas.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apereo.cas</groupId>
+            <artifactId>cas-server-webapp-config</artifactId>
+            <version>${cas.version}</version>
+        </dependency>
 <!--        <dependency>-->
 <!--            <groupId>org.apereo.cas</groupId>-->
 <!--            <artifactId>cas-server-support-captcha-core</artifactId>-->
 <!--            <version>${cas.version}</version>-->
 <!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>org.apereo.cas</groupId>-->
-<!--            <artifactId>cas-server-support-themes</artifactId>-->
-<!--            <version>${cas.version}</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>org.apereo.cas</groupId>-->
-<!--            <artifactId>cas-server-support-thymeleaf</artifactId>-->
-<!--            <version>${cas.version}</version>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>org.apereo.cas</groupId>
+            <artifactId>cas-server-support-themes</artifactId>
+            <version>${cas.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apereo.cas</groupId>
+            <artifactId>cas-server-support-themes-core</artifactId>
+            <version>${cas.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apereo.cas</groupId>
+            <artifactId>cas-server-support-thymeleaf</artifactId>
+            <version>${cas.version}</version>
+        </dependency>
 <!--        <dependency>-->
 <!--            <groupId>org.apereo.cas</groupId>-->
 <!--            <artifactId>cas-server-support-validation</artifactId>-->
 <!--            <version>${cas.version}</version>-->
 <!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>org.apereo.cas</groupId>-->
-<!--            <artifactId>cas-server-webapp-init</artifactId>-->
-<!--            <version>${cas.version}</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>org.apereo.cas</groupId>-->
-<!--            <artifactId>cas-server-webapp-init-tomcat</artifactId>-->
-<!--            <version>${cas.version}</version>-->
-<!--        </dependency>-->
+
 
 
 

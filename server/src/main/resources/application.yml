@@ -8,3 +8,4 @@ logging:
   level:
     cn.magikarpll: debug
     org.apereo: debug
+    org.springframework: debug
