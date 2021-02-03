@@ -8,3 +8,5 @@ eureka:
       defaultZone: http://kjs.szse.cn:8761/eureka
     register-with-eureka: false  # false表示不向注册中心注册自己
     fetch-registry: false  # false表示自己就是注册中心，职责为维护服务
+
+#注册中心访问地址 http://kjs.szse.cn:8761/
