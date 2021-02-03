@@ -7,5 +7,30 @@ logging:
   config: classpath:log4j2.xml
   level:
     cn.magikarpll: debug
-    org.apereo: debug
-    org.springframework: debug
+    org.apereo: info
+    org.springframework: info
+
+eureka:
+  client:
+    enabled: true
+    disable-delta: true
+    register-with-eureka: true
+    registry-fetch-interval-seconds: 5
+    prefer-same-zone-eureka: true
+    service-url:
+      defaultZone: http://kjs.szse.cn:8761/eureka
+  instance:
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 15
+    metadata-map:
+      zone: 'ft'
+      type: service
+      cluster: 'kjs'
+      group: 'sso'
+      serviceName: 'kjs-sso'
+      resourceCode: '1'
+      version: 1.0
+      appHome: 'pwd'
+      logHome: 'pwd'
+      registe: automatic

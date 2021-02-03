@@ -19,6 +19,53 @@
     </properties>
 
     <dependencies>
+<!--        rest登录-->
+        <dependency>
+            <groupId>org.apereo.cas</groupId>
+            <artifactId>cas-server-support-rest-authentication</artifactId>
+            <version>${cas.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apereo.cas</groupId>
+            <artifactId>cas-server-support-rest</artifactId>
+            <version>${cas.version}</version>
+        </dependency>
+<!--        swagger-->
+        <dependency>
+            <groupId>org.apereo.cas</groupId>
+            <artifactId>cas-server-support-swagger</artifactId>
+            <version>${cas.version}</version>
+        </dependency>
+        <!--        validate v3接口 -->
+        <dependency>
+            <groupId>org.apereo.cas</groupId>
+            <artifactId>cas-server-support-validation</artifactId>
+            <version>${cas.version}</version>
+        </dependency>
+<!--        oauth server-->
+        <dependency>
+            <groupId>org.apereo.cas</groupId>
+            <artifactId>cas-server-support-oauth-webflow</artifactId>
+            <version>${cas.version}</version>
+        </dependency>
+<!--        jwt-->
+        <dependency>
+            <groupId>org.apereo.cas</groupId>
+            <artifactId>cas-server-support-token-webflow</artifactId>
+            <version>${cas.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apereo.cas</groupId>
+            <artifactId>cas-server-support-token-tickets</artifactId>
+            <version>${cas.version}</version>
+        </dependency>
+<!--        eureka client-->
+        <dependency>
+            <groupId>org.apereo.cas</groupId>
+            <artifactId>cas-server-support-eureka-client</artifactId>
+            <version>${cas.version}</version>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>

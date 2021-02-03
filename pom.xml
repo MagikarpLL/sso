@@ -13,6 +13,7 @@
         <module>server</module>
         <module>client</module>
         <module>management</module>
+        <module>eureka-server</module>
     </modules>
 
     <properties>
