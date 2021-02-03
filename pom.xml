@@ -12,7 +12,6 @@
     <modules>
         <module>server</module>
         <module>client</module>
-        <module>management</module>
         <module>eureka-server</module>
         <module>app1</module>
     </modules>
