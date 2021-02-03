@@ -7,6 +7,10 @@ server:
     context-path: /app1
   port: 8081
 
+cas:
+  server-url-prefix: https://kjs.szse.cn:8080/cas
+  server-login-url: https://kjs.szse.cn:8080/cas/login
+  client-host-url: http://kjs.szse.cn:8081/app1/test/get
 
 eureka:
   client:

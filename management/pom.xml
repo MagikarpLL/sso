@@ -10,20 +10,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>cn.magikarpll.sso</groupId>
-    <artifactId>client</artifactId>
+    <artifactId>management</artifactId>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
-        <java.cas.client.version>3.6.0</java.cas.client.version>
     </properties>
-
-    <dependencies>
-        <dependency>
-            <groupId>org.jasig.cas.client</groupId>
-            <artifactId>cas-client-support-springboot</artifactId>
-            <version>${java.cas.client.version}</version>
-        </dependency>
-    </dependencies>
 
 </project>
