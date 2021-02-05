@@ -27,7 +27,8 @@
 目前改造方案如下:
 - 继承cas-server-code-webflow-api 包中的AbstractCasWebflowConfigurer并自定义它，即可实现自己的webflow流程
 - 登录请参考该类 DefaultLoginWebflowConfigurer  ，然后相关action都放在cas-server-support-action中，相关webflow名字都在CasWebflowConstants中
-
+- 重点关注State的enter方法，流转都在那里面进行
+- 重点关注Transition的execute方法，流转在里面进行
 
 遇到的问题如下:
 - loing-webflow.xml并不能移除，且原生的webflow配置需要屏蔽掉.他们现阶段的做法是，放两个webflow的xml文件到资源目录，然后通过java代码向里面添加action等流程
