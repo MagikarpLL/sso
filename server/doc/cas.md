@@ -6,6 +6,10 @@
 - 自定义前端的展示页面，可能完全更换引擎，不使用自带的thymeleaf模板
 - 支持rest接口登录
 - oauth2.0接口认证
+- 持久化session 与 ticket放入redis(DefaultTicketRegistry)
+- 图形验证码与短信验证码支持，及校验逻辑
+- 改造密码校验逻辑（JDBC校验，修改CREDENTIAL）
+- 不同网站逻辑与页面不同
 
 ## 改造记录
 ### war包改造

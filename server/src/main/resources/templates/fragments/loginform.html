@@ -40,13 +40,13 @@
                 <section class="cas-field my-3" id="usernameSection">
                     <div class="d-flex">
 
-                        <label for="username" class="mdc-text-field mdc-text-field--outlined">
+                        <label for="account" class="mdc-text-field mdc-text-field--outlined">
                             <input class="mdc-text-field__input"
-                                   id="username"
+                                   id="account"
                                    size="25"
                                    type="text"
                                    th:readonly="!${@casThymeleafLoginFormDirector.isLoginFormUsernameInputVisible(#vars)}"
-                                   th:field="*{username}"
+                                   th:field="*{account}"
                                    th:accesskey="#{screen.welcome.label.netid.accesskey}"
                                    autocomplete="off"/>
 
@@ -61,11 +61,11 @@
 
                         <script type="text/javascript" th:inline="javascript">
                             /*<![CDATA[*/
-                            var username = /*[[${@casThymeleafLoginFormDirector.getLoginFormUsername(#vars)}]]*/;
+                            var account = /*[[${@casThymeleafLoginFormDirector.getLoginFormUsername(#vars)}]]*/;
                             var disabled = /*[[${@casThymeleafLoginFormDirector.isLoginFormUsernameInputDisabled(#vars)}]]*/;
 
-                            if (username != null && username !== '') {
-                                $('#username').val(username);
+                            if (account != null && account !== '') {
+                                $('#account').val(account);
                                 if (disabled) {
                                     $('#usernameSection').hide();
                                 }
@@ -225,6 +225,12 @@
                     <input type="hidden" name="execution" th:value="${flowExecutionKey}"/>
                     <input type="hidden" name="_eventId" value="submit"/>
                     <input type="hidden" name="geolocation"/>
+                    <input type="hidden" name="text" value="text"/>
+                    <input type="hidden" name="code" value="code"/>
+                    <input type="hidden" name="loginType" value="loginType"/>
+                    <input type="hidden" name="receiverType" value="receiverType"/>
+                    <input type="hidden" name="appSourceId" value="appSourceId"/>
+
 
                     <p th:if="${#request.getMethod().equalsIgnoreCase('POST')}">
                             <span th:each="entry : ${httpRequestInitialPostParameters}" th:remove="tag">
@@ -260,8 +266,8 @@
 
             <span id="webauthnLoginPanel" th:if="${webAuthnPrimaryAuthenticationEnabled}">
                     <script type="text/javascript">
-                        $("#fm1 #username").on("input", function () {
-                            let user = $("#fm1 #username").val();
+                        $("#fm1 #account").on("input", function () {
+                            let user = $("#fm1 #account").val();
                             if (user !== '') {
                                 $('#webauthnLoginPanel').show();
                             } else {

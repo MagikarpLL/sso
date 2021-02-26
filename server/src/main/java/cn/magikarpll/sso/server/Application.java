@@ -1,16 +1,19 @@
 package cn.magikarpll.sso.server;
 
+import cn.magikarpll.sso.server.cas.CustomerAuthWebflowConfiguration;
 import lombok.Generated;
 import org.apereo.cas.CasEmbeddedContainerUtils;
 import org.apereo.cas.configuration.CasConfigurationProperties;
 import org.apereo.cas.web.CasWebApplication;
 import org.apereo.cas.web.CasWebApplicationContext;
+import org.apereo.cas.web.flow.config.CasWebflowContextConfiguration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.Banner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.actuate.autoconfigure.metrics.KafkaMetricsAutoConfiguration;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.cassandra.CassandraAutoConfiguration;
 import org.springframework.boot.autoconfigure.data.mongo.MongoDataAutoConfiguration;
@@ -30,6 +33,7 @@ import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
+import org.springframework.context.annotation.Import;
 import org.springframework.context.event.EventListener;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.EnableScheduling;
@@ -39,8 +43,9 @@ import java.time.Instant;
 
 @EnableDiscoveryClient
 @SpringBootApplication(
-        exclude = {HibernateJpaAutoConfiguration.class, JerseyAutoConfiguration.class, GroovyTemplateAutoConfiguration.class, GsonAutoConfiguration.class, JmxAutoConfiguration.class, DataSourceAutoConfiguration.class, RedisAutoConfiguration.class, MongoAutoConfiguration.class, MongoDataAutoConfiguration.class, KafkaAutoConfiguration.class, KafkaMetricsAutoConfiguration.class, CassandraAutoConfiguration.class, DataSourceTransactionManagerAutoConfiguration.class, RedisRepositoriesAutoConfiguration.class},
-        proxyBeanMethods = false
+        exclude = {CasWebflowContextConfiguration.class,HibernateJpaAutoConfiguration.class, JerseyAutoConfiguration.class, GroovyTemplateAutoConfiguration.class, GsonAutoConfiguration.class, JmxAutoConfiguration.class, DataSourceAutoConfiguration.class, RedisAutoConfiguration.class, MongoAutoConfiguration.class, MongoDataAutoConfiguration.class, KafkaAutoConfiguration.class, KafkaMetricsAutoConfiguration.class, CassandraAutoConfiguration.class, DataSourceTransactionManagerAutoConfiguration.class, RedisRepositoriesAutoConfiguration.class},
+        proxyBeanMethods = false,
+        scanBasePackageClasses = {Application.class, CasWebApplication.class}
 )
 @EnableConfigurationProperties({CasConfigurationProperties.class})
 @EnableAsync
@@ -58,7 +63,7 @@ public class Application {
 
     public static void main(final String[] args) {
         Banner banner = CasEmbeddedContainerUtils.getCasBannerInstance();
-        (new SpringApplicationBuilder(new Class[]{CasWebApplication.class})).banner(banner).web(WebApplicationType.SERVLET).logStartupInfo(true).contextClass(CasWebApplicationContext.class).run(args);
+        (new SpringApplicationBuilder(new Class[]{Application.class})).banner(banner).web(WebApplicationType.SERVLET).logStartupInfo(true).contextClass(CasWebApplicationContext.class).run(args);
     }
 
     @EventListener
