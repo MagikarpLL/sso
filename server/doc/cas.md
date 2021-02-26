@@ -1,15 +1,14 @@
 # CAS6.3版本改造记录
 
 ## 改造目标
-- 由原来的war-ovelay插件的war包部署方式改为maven引入依赖，jar包启动
-- 自定义并改造cas的webflow流程(暂不需要)
-- 自定义前端的展示页面，可能完全更换引擎，不使用自带的thymeleaf模板
+- 由原来的war-ovelay插件的war包部署方式改为maven引入依赖，jar包启动(完成)
+- 自定义并改造cas的webflow流程(完成)
+- 改造密码校验逻辑（JDBC校验，修改CREDENTIAL）(完成)
+- 持久化session 与 ticket放入redis(DefaultTicketRegistry)
+- 不同网站逻辑与页面不同
 - 支持rest接口登录
 - oauth2.0接口认证
-- 持久化session 与 ticket放入redis(DefaultTicketRegistry)
 - 图形验证码与短信验证码支持，及校验逻辑
-- 改造密码校验逻辑（JDBC校验，修改CREDENTIAL）
-- 不同网站逻辑与页面不同
 
 ## 改造记录
 ### war包改造
